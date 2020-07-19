@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "c8d1342b-7f86-4734-8786-af71c06965f6",
+		"name": "WHMCRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "jwt/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_id",
+							"value": "001",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "aaa",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/v1/jwt/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"jwt",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "whm/getpkg",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_id",
+							"value": "001",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "aaa",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/v1/whm/packages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"whm",
+						"packages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjAwMSIsIm5hbWUiOiJyYXltb25kIiwiZW1haWwiOiJyYXltb25kQGdtYWlsLmNvbSJ9LCJpYXQiOjE1OTUwNDE0NjgsImV4cCI6MTU5NTA0NTA2OH0.ATPlYABW-Kzsi6K9ENJyGmBWUamPI3azOM0q2XCpu9Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWFhIiwicGFzc3dvcmQiOiIxMjMiLCJlbWFpbCI6InNkYWZzZGYiLCJtb2JpbGUiOiJzZHNkZnNkIiwidG9rZW4iOm51bGwsImNyZWF0ZWRBdCI6MSwidXBkYXRlZEF0IjoxLCJpZCI6MX0sImlhdCI6MTU5NTA5NDI2MCwiZXhwIjoxNTk1MDk3ODYwfQ.wOpRSKeUsUn7nbpbCJ5JvrksVmQQTAgUBmCBbIWBJ7k",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "aaa",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "raymond@gmail.com",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/v1/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jwt/verify",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjAwMSIsIm5hbWUiOiJyYXltb25kIiwiZW1haWwiOiJyYXltb25kQGdtYWlsLmNvbSJ9LCJpYXQiOjE1OTUwNDE0NjgsImV4cCI6MTU5NTA0NTA2OH0.ATPlYABW-Kzsi6K9ENJyGmBWUamPI3azOM0q2XCpu9Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/v1/jwt/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"jwt",
+						"refresh"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjAwMSIsIm5hbWUiOiJyYXltb25kIiwiZW1haWwiOiJyYXltb25kQGdtYWlsLmNvbSJ9LCJpYXQiOjE1OTUwODI4NTAsImV4cCI6MTU5NTA4NjQ1MH0.PqFIsJoIVohj_N8LG92RpdiKIwne1P5iohAKq50NM8E",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "whm/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_id",
+							"value": "001",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "aaa",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/v1/whm/packages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"whm",
+						"packages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjAwMSIsIm5hbWUiOiJyYXltb25kIiwiZW1haWwiOiJyYXltb25kQGdtYWlsLmNvbSJ9LCJpYXQiOjE1OTUwNDE0NjgsImV4cCI6MTU5NTA0NTA2OH0.ATPlYABW-Kzsi6K9ENJyGmBWUamPI3azOM0q2XCpu9Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "raymond",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "raymond@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "0938746772",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
