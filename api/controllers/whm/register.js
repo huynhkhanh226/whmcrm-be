@@ -1,23 +1,51 @@
 module.exports = {
 
+  friendlyName: '',
+  description: '',
 
-  friendlyName: 'Auth',
+  inputs: {
+    username: {
+      description: '',
+      type: 'string',
+      required: true
+    },
+    password: {
+      description: '',
+      type: 'string',
+      required: true
+    },
+    domain: {
+      description: '',
+      type: 'string',
+      required: true
+    },
+    contactemail: {
+      description: '',
+      type: 'string',
+      required: true
+    },
+    pkgname: {
+      description: '',
+      type: 'string',
+      required: true
+    },
+  },
 
-
-  description: 'Auth whm.',
-
-  fn: async function () {
+  fn: async function (inputs) {
     // All done.
-    const res = await sails.helpers.whm.register.with();
+    const res = await sails.helpers.whm.register.with(inputs);
     if (res.status == 200) {
       return {
         code: 200,
-        data: res.data.data
+        data: {
+          ...inputs,
+          ...res.data.data,
+        }
       }
     } else {
       return {
         code: 1000,
-        data: res.statusText
+        message: res.statusText
       }
     }
   }

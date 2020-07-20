@@ -17,7 +17,7 @@ module.exports = {
     } else {
       return {
         code: 1000,
-        data: res.statusText
+        message: res.statusText
       }
     }
   }

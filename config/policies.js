@@ -28,4 +28,5 @@ module.exports.policies = {
   'users/register': true,
   'whm/packages': true,
   'whm/register': true,
+  'system/sendmail': true,
 };

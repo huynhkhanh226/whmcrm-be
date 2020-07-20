@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c8d1342b-7f86-4734-8786-af71c06965f6",
+		"_postman_id": "41f523d6-7fab-43b2-b19d-0bf133c7d3f5",
 		"name": "WHMCRM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -242,14 +242,29 @@
 							"type": "text"
 						},
 						{
+							"key": "domain",
+							"value": "vndevops.com",
+							"type": "text"
+						},
+						{
+							"key": "contactemail",
+							"value": "huynhkhanh226@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "pkgname",
+							"value": "vndehvla_BASIC",
+							"type": "text"
+						},
+						{
 							"key": "password",
-							"value": "123",
+							"value": "123456",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:1337/api/v1/whm/packages",
+					"raw": "http://localhost:1337/api/v1/whm/register",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -259,7 +274,7 @@
 						"api",
 						"v1",
 						"whm",
-						"packages"
+						"register"
 					]
 				}
 			},
@@ -324,6 +339,74 @@
 						"v1",
 						"users",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system/sendmail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjAwMSIsIm5hbWUiOiJyYXltb25kIiwiZW1haWwiOiJyYXltb25kQGdtYWlsLmNvbSJ9LCJpYXQiOjE1OTUwNDE0NjgsImV4cCI6MTU5NTA0NTA2OH0.ATPlYABW-Kzsi6K9ENJyGmBWUamPI3azOM0q2XCpu9Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "raymond",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "raymond@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "mobile",
+							"value": "0938746772",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/v1/system/sendmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"system",
+						"sendmail"
 					]
 				}
 			},

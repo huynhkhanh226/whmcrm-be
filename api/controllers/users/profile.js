@@ -14,10 +14,17 @@ module.exports = {
 
   fn: async function (inputs) {
     const user = await sails.helpers.users.find.with({username: inputs.username});
-    console.log(user);
-    return {
-      code: 200,
-      data: user
-    };
+    if (user){
+      return {
+        code: 200,
+        data: user
+      };
+    }else{
+      return {
+        code: 10000,
+        message: "Invalid user"
+      };
+    }
+    
   }
 };
