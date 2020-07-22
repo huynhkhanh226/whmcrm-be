@@ -17,6 +17,7 @@ module.exports.routes = {
   'POST  /api/v1/jwt/refresh':          { action: 'jwt/refresh' },
 
   'POST  /api/v1/users/register':          { action: 'users/register' },
+  'POST  /api/v1/users/login':          { action: 'users/login' },
   'POST  /api/v1/users/profile':          { action: 'users/profile' },
 
 

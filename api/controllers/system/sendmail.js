@@ -4,15 +4,23 @@ module.exports = {
   description: 'Sendmail system.',
 
   inputs: {
-
+    to: {
+      type: "string",
+      required: true
+    },
+    subject:{
+      type: "string",
+      required: true
+    },
+    content: {
+      type: "string",
+    },
   },
-
 
   fn: async function (inputs) {
 
     // All done.
-    const result = await sails.helpers.system.sendmail.with();
-    return result;
+    return await sails.helpers.system.sendmail.with(inputs);
 
   }
 

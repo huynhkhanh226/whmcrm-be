@@ -5,6 +5,17 @@ module.exports = {
   description: 'Sendmail system.',
 
   inputs: {
+    to: {
+      type: "string",
+      required: true
+    },
+    subject: {
+      type:"string",
+      required: true
+    },
+    content: {
+      type: "string",
+    },
   },
 
   fn: async function (inputs) {
@@ -15,28 +26,28 @@ module.exports = {
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
       //host: "smtp.ethereal.email",
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true, // true for 465, false for other ports
+      host: sails.config.mail.mailServer,
+      port: sails.config.mail.port,
+      secure: sails.config.mail.secure, // true for 465, false for other ports
       auth: {
-        user: "huynhkhanh226@gmail.com", // generated ethereal user
-        pass: "Khanh@123456", // generated ethereal password
+        user: sails.config.mail.username, // generated ethereal user
+        pass: sails.config.mail.password, // generated ethereal password
       },
     });
 
     // send mail with defined transport object
-    let info = await transporter.sendMail({
-      from: '"Fred Foo 👻"huynhkhanh226@gmail.com', // sender address
-      to: "huynhkhanh226@gmail.com, felixhuynh@gmail.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>", // html body
+    return await transporter.sendMail({
+      from: '"VNDEVHOST 👻"' + sails.config.mail.sender, // sender address
+      to: inputs.to, // list of receivers
+      subject: inputs.subject + " ✔", // Subject line
+      text: inputs.content, // plain text body
+      html: "<b>" + inputs.content + "</b>", // html body
     });
 
-    console.log("Message sent: %s", info.messageId);
+    //console.log("Message sent: %s", info.messageId);
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     // Preview only available when sending through an Ethereal account
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    //console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
   }
 };

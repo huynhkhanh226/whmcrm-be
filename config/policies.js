@@ -25,6 +25,7 @@ module.exports.policies = {
   'jwt/create': true,
   'jwt/refresh': true,
   'users/profile': true,
+  'users/login': true,
   'users/register': true,
   'whm/packages': true,
   'whm/register': true,
