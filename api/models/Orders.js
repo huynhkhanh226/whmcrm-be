@@ -1,37 +1,45 @@
 /**
- * User.js
+ * Orders.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: "users",
+
+  tableName: "orders",
   datastore: "mysql",
   primaryKey: 'id',
   attributes: {
-    username: {
+    order_id: {
       type: 'string',
       required: true,
       unique: true,
     },
-    password: {
+    bill_addres: {
+      type: 'string',
+    },
+    payment_method: {
       type: 'string',
       required: true,
     },
-    email: {
-      type: 'string',
-      required: true,
-      unique: true,
-    },
-    mobile: {
+    payment_status: {
       type: 'string',
       required: true,
     },
-    orders: {
-      collection: 'orders',
+   
+    details: {
+      collection: 'OrderDetails',
       via: 'owner'
     },
+    owner: {
+      model: 'Users'
+    },
+    customer_id: {
+      type: 'string',
+    }
   },
+  
+
 };
 

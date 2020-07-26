@@ -30,7 +30,7 @@ module.exports = {
   fn: async function (inputs) {
     return new Promise(async (resolve, reject) => {
       try {
-        //await Users.create(inputs);
+        await Users.create(inputs);
         resolve(
           {
             code: 200,

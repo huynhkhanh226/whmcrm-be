@@ -13,6 +13,7 @@ module.exports.routes = {
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
   //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
+  'GET  /api/v1/hello':          { action: 'home/hello' },
   'POST  /api/v1/jwt/create':          { action: 'jwt/create' },
   'POST  /api/v1/jwt/refresh':          { action: 'jwt/refresh' },
 

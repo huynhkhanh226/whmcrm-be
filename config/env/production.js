@@ -73,7 +73,10 @@ module.exports = {
       // ssl: true,
 
     },
-
+    mysql: {
+      adapter: 'sails-mysql',
+      url: 'mysql://vndehvla_whmcrm:Khanh@10101989@localhost:3306/vndehvla_whmcrm',
+    },
   },
 
 
@@ -148,9 +151,11 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      // allowOrigins: [
-      //   'https://example.com',
-      // ]
+      allRoutes: true,
+      allowCredentials: false,
+      allowOrigins: '*',
+      allowRequestMethods: 'GET, POST, PUT, DELETE, HEAD',
+      allowRequestHeaders: 'content-type,token,secret'
     },
 
   },
@@ -222,7 +227,8 @@ module.exports = {
     ***************************************************************************/
     cookie: {
       // secure: true,
-      maxAge: 24 * 60 * 60 * 1000,  // 24 hours
+      secure: false, //khanh add
+      maxAge: 24 * 60 * 60 * 1000  // 24 hours
     },
 
   },
@@ -250,10 +256,9 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
-    //   'https://staging.example.com',
-    // ],
+    onlyAllowOrigins: [
+      'http://api.vndevhost.com',
+    ],
 
 
     /***************************************************************************
@@ -371,7 +376,7 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://example.com',
+    baseUrl: "http://api.vndevhost.com",
     internalEmailAddress: 'support@example.com',
 
     // mailgunDomain: 'mg.example.com',
@@ -388,7 +393,6 @@ module.exports = {
     // sails_custom__stripeSecret=sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm
     // ```
     //--------------------------------------------------------------------------
-
   },
 
 
