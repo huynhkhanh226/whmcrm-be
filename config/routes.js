@@ -25,4 +25,5 @@ module.exports.routes = {
   'POST  /api/v1/whm/packages':          { action: 'whm/packages' },
   'POST  /api/v1/whm/register':          { action: 'whm/register' },
   'POST  /api/v1/system/sendmail':          { action: 'system/sendmail' },
+  'POST  /api/v1/whm/order-list':          { action: 'whm/order-list' },
 };

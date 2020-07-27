@@ -30,4 +30,5 @@ module.exports.policies = {
   'whm/packages': true,
   'whm/register': true,
   'system/sendmail': true,
+  'whm/order-list': true,
 };

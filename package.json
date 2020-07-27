@@ -9,18 +9,19 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "axios": "^0.19.2",
+    "cross-env": "^7.0.2",
     "jsonwebtoken": "^8.5.1",
     "memory-cache": "^0.2.0",
     "moment": "^2.27.0",
     "nodemailer": "^6.4.10",
+    "react-uuid": "^1.0.2",
     "sails": "^1.2.4",
     "sails-hook-apianalytics": "^2.0.3",
     "sails-hook-organics": "^0.16.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
     "sails-mysql": "^1.0.1",
-    "uuid": "^8.2.0",
-    "cross-env": "^7.0.2"
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "apidoc": "^0.23.0",

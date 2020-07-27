@@ -29,7 +29,7 @@ module.exports = {
       required: true,
     },
     orders: {
-      collection: 'orders',
+      collection: 'Orders',
       via: 'owner'
     },
   },

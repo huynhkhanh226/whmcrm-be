@@ -9,17 +9,7 @@ module.exports = {
       type: 'string',
       required: true
     },
-    password: {
-      description: '',
-      type: 'string',
-      required: true
-    },
     domain: {
-      description: '',
-      type: 'string',
-      required: true
-    },
-    contactemail: {
       description: '',
       type: 'string',
       required: true
@@ -29,14 +19,29 @@ module.exports = {
       type: 'string',
       required: true
     },
+    payment_method: {
+      description: '',
+      type: 'string',
+    },
+    bill_address: {
+      description: '',
+      type: 'string',
+    },
+    details: {
+      description: '',
+      type: 'json',
+    }
   },
 
   fn: async function (inputs) {
     // All done.
     const res = await sails.helpers.whm.register.with(inputs);
-    if (res.status == 200) {
+    if (res.code == 200) {
+      debugger;
+      const user = await sails.helpers.users.find.with({ username: inputs.username });
+      debugger;
       const mail = await sails.helpers.system.sendmail.with({
-        to: inputs.contactemail,
+        to: user.email,
         subject: "Mail tự động từ VNDEVHOST",
         content: "Cảm ơn quý khách đã tin dùng dịch vụ của VNDEVHOST. </br> Và đây là thông toàn bộ thông tin bạn cần."
       });
@@ -45,7 +50,7 @@ module.exports = {
         code: 200,
         data: {
           ...inputs,
-          ...res.data.data,
+          //...res.data.data,
           mail
         }
       }
