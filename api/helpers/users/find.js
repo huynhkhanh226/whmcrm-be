@@ -17,7 +17,12 @@ module.exports = {
 
   fn: async function (inputs) {
     if (inputs.username)
-      return await Users.findOne({ username: inputs.username }).populate('orders');
+      var user = await Users.findOne({ username: inputs.username }).populate('orders');
+      user.orders = await Orders
+      .find({ id: 1 })
+      .populate('details');
+    
+     return user;
     if (inputs.email)
       return await Users.findOne({ email: inputs.email });
   }

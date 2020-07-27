@@ -27,7 +27,6 @@ module.exports = {
       type: 'string',
       required: true,
     },
-   
     details: {
       collection: 'OrderDetails',
       via: 'owner'
