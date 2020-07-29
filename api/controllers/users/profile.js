@@ -17,6 +17,7 @@ module.exports = {
 
   fn: async function (inputs) {
     const user = await sails.helpers.users.find.with({username: inputs.username});
+    debugger;
     if (user && user.password == inputs.password){
       return {
         code: 200,

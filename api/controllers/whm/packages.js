@@ -8,16 +8,23 @@ module.exports = {
 
   fn: async function () {
     // All done.
-    const res = await sails.helpers.whm.packages.with();
-    if (res.status == 200) {
+   
+
+    try{
+      const packages = await Packages.find();
+      if (!packages){ 
+        await sails.helpers.whm.packages();
+        packages = await Packages.find();
+      }
+      
       return {
         code: 200,
-        data: res.data.data.pkg
+        data: packages
       }
-    } else {
+    }catch(error){
       return {
         code: 1000,
-        message: res.statusText
+        data: error.message
       }
     }
   }

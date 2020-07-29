@@ -28,16 +28,12 @@ module.exports = {
       type: 'number',
       required: true,
     },
-    order_id: {
-      type: 'string',
-      required: true,
-    },
     package_id: {
-      type: 'string',
-      required: true,
+      model: 'Packages',
     },
-    owner: {
-      model: 'Orders'
+    order_id: {
+      model: 'Orders',
+      unique: true
     }
 
   },

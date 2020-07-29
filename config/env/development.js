@@ -47,8 +47,8 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     default: {
-      adapter: 'sails-mysql',
-      url: 'mysql://root:@localhost:3306/whmcrm',
+      //adapter: 'sails-mysql',
+      //url: 'mysql://root:@localhost:3306/whmcrm',
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
       //  ||   sensitive credentials like `url` using an environment variable.

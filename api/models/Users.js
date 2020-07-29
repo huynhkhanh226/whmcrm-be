@@ -30,7 +30,7 @@ module.exports = {
     },
     orders: {
       collection: 'Orders',
-      via: 'owner'
+      via: 'customer_id'
     },
   },
 };

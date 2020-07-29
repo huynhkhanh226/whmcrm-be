@@ -29,14 +29,11 @@ module.exports = {
     },
     details: {
       collection: 'OrderDetails',
-      via: 'owner'
-    },
-    owner: {
-      model: 'Users'
+      via: 'order_id'
     },
     customer_id: {
-      type: 'string',
-    }
+      model: 'Users'
+    },
   },
   
 
