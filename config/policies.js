@@ -31,4 +31,5 @@ module.exports.policies = {
   'whm/register': true,
   'system/sendmail': true,
   'whm/order-list': true,
+  'whm/get-coupons': true,
 };
