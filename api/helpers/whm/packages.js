@@ -11,6 +11,7 @@ module.exports = {
     const config = Utils.getHeader();
     const body = { "want": "all" };
     const url = Utils.getUrl("/json-api/listpkgs");
+    console.log(url);
     const response = await axios.post(url, body, config);
     // packageID: data[i].name,
     // bandwidth: data[i].BWLIMIT,
@@ -21,18 +22,18 @@ module.exports = {
     // maxPark: data[i].MAXPARK,
     // maxSQL: data[i].MAXSQL,
     const asyncFunc = response.data.data.pkg.map(async (package) => {
-      const exist = await Packages.findOne({ package_id: package.name})
+      const exist = await Packages.findOne({ packageId: package.name})
       if (!exist){
         await Packages.create({
-          package_id: package.name,
-          package_name: package.name.split('_')[1],
+          packageId: package.name,
+          packageName: package.name.split('_')[1],
           bandwidth: package.BWLIMIT,
-          disk_quota: package.QUOTA,
-          max_addon: package.MAXADDON,
-          max_sub: package.MAXSUB,
-          max_ftp: package.MAXFTP,
-          max_park: package.MAXPARK,
-          max_sql: package.MAXSQL,
+          diskQuota: package.QUOTA,
+          maxAddon: package.MAXADDON,
+          maxSub: package.MAXSUB,
+          maxFtp: package.MAXFTP,
+          maxPark: package.MAXPARK,
+          maxSql: package.MAXSQL,
         })
       } 
     })

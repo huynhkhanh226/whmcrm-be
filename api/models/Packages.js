@@ -16,14 +16,14 @@ module.exports = {
   // maxSQL: data[i].MAXSQL,
   tableName: "packages",
   datastore: "mysql",
-  primaryKey: 'package_id',
+  primaryKey: 'packageId',
   attributes: {
-    package_id: {
+    packageId: {
       type: 'string',
       required: true,
       unique: true,
     },
-    package_name: {
+    packageName: {
       type: 'string',
       required: true,
     },
@@ -31,27 +31,27 @@ module.exports = {
       type: 'string',
       required: true,
     },
-    disk_quota: {
+    diskQuota: {
       type: 'string',
       required: true,
     },
-    max_addon: {
+    maxAddon: {
       type: 'string',
       required: true,
     },
-    max_sub: {
+    maxSub: {
       type: 'string',
       required: true,
     },
-    max_ftp: {
+    maxFtp: {
       type: 'string',
       required: true,
     },
-    max_park: {
+    maxPark: {
       type: 'string',
       required: true,
     },
-    max_sql: {
+    maxSql: {
       type: 'string',
       required: true,
     },

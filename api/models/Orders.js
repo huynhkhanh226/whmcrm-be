@@ -11,27 +11,27 @@ module.exports = {
   datastore: "mysql",
   primaryKey: 'id',
   attributes: {
-    order_id: {
+    orderId: {
       type: 'string',
       required: true,
       unique: true,
     },
-    bill_addres: {
+    billAddres: {
       type: 'string',
     },
-    payment_method: {
+    paymentMethod: {
       type: 'string',
       required: true,
     },
-    payment_status: {
+    paymentStatus: {
       type: 'string',
       required: true,
     },
     details: {
       collection: 'OrderDetails',
-      via: 'order_id'
+      via: 'orderId'
     },
-    customer_id: {
+    customerId: {
       model: 'Users'
     },
   },

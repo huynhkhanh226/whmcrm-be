@@ -11,7 +11,7 @@ module.exports = {
   datastore: "mysql",
   primaryKey: 'id',
   attributes: {
-    details_id: {
+    detailId: {
       type: 'string',
       required: true,
       unique: true,
@@ -28,10 +28,10 @@ module.exports = {
       type: 'number',
       required: true,
     },
-    package_id: {
+    packageId: {
       model: 'Packages',
     },
-    order_id: {
+    orderId: {
       model: 'Orders',
       unique: true
     }

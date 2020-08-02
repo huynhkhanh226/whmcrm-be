@@ -11,12 +11,12 @@ module.exports = {
   datastore: "mysql",
   primaryKey: 'id',
   attributes: {
-    coupon_id: {
+    couponId: {
       type: 'string',
       required: true,
       unique: true,
     },
-    coupon_name: {
+    couponName: {
       type: 'string',
       required: true,
     },

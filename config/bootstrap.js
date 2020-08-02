@@ -66,8 +66,8 @@ module.exports.bootstrap = async function() {
 
   await Coupons.createEach([
     //{ username: 'raymond', password: '123', isSuperAdmin: true, password: await sails.helpers.passwords.hashPassword('abc123') },
-    { coupon_id: 'SALE25', coupon_name: 'Giảm giá 25%', rate: 0.25},
-    { coupon_id: 'SALE75', coupon_name: 'Giảm giá 75%', rate:0.75},
+    { couponId: 'SALE25', couponName: 'Giảm giá 25%', rate: 0.25},
+    { couponId: 'SALE75', couponName: 'Giảm giá 75%', rate:0.75},
   ]);
 
   // Save new bootstrap version

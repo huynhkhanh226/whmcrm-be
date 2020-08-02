@@ -9,10 +9,10 @@ module.exports = {
   fn: async function () {
     // All done.
    
-
+debugger;
     try{
       const packages = await Packages.find();
-      if (!packages){ 
+      if (packages.length == 0){ 
         await sails.helpers.whm.packages();
         packages = await Packages.find();
       }
