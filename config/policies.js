@@ -32,4 +32,5 @@ module.exports.policies = {
   'system/sendmail': true,
   'whm/order-list': true,
   'whm/get-coupons': true,
+  "category/updateCategory": true,
 };
