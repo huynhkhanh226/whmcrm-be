@@ -12,7 +12,7 @@
     "cross-env": "^7.0.2",
     "jsonwebtoken": "^8.5.1",
     "memory-cache": "^0.2.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "nodemailer": "^6.4.10",
     "react-uuid": "^1.0.2",
     "sails": "^1.2.4",
